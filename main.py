@@ -45,7 +45,7 @@ for entry in range(len(d['entries'])):
                 cve_epoch = int(datetime.datetime.fromtimestamp(time.mktime(date)).strftime('%s'))
 
                 # Check if CVE Created within the last 15 minutes
-                if ((time.time() - cve_epoch)/60) < 9000:
+                if ((time.time() - cve_epoch)/60) < 15:
 
                     # Checks if cve already in known database. If it is, add to wrekt list, or just continue
                     if any(cve in s for s in known_cve_list):
